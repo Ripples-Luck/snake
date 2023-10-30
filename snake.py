@@ -78,7 +78,9 @@ def get(snake,food):
         else:
             return False
 
-while True:
+while 1:
+    time.tick(15)
+
     for event in pygame.event.get():
         if event.type==pygame.QUIT:
             sys.exit()
@@ -101,5 +103,3 @@ while True:
         pygame.draw.rect(screen,GREEN,i)
 
     pygame.display.flip()
-
-    time.tick(15)
