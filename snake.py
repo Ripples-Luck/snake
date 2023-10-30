@@ -1,4 +1,5 @@
-import pygame,sys,random
+import pygame,random
+from sys import exit
 
 pygame.init()
 PPI=(960,540)
@@ -83,7 +84,7 @@ while 1:
 
     for event in pygame.event.get():
         if event.type==pygame.QUIT:
-            sys.exit()
+            exit()
         elif event.type==pygame.KEYDOWN:
             green_snake.drive(event.key)
 
