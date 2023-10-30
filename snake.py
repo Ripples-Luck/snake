@@ -92,7 +92,7 @@ while 1:
     green_snake.circle()
 
     a=get(green_snake,yellow_food)
-    if a==True:
+    if a==1:
         green_snake.add()
         yellow_food.new()
 
