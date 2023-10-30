@@ -1,13 +1,15 @@
 import pygame,sys,random
 
 pygame.init()
-ppi=(960,540)
-screen=pygame.display.set_mode(ppi)
+PPI=(960,540)
+screen=pygame.display.set_mode(PPI)
 pygame.display.set_caption("snake")
 
-green=(83,224,45)
-black=(0,0,0)
-yellow=(249,236,24)
+time=pygame.time.Clock()
+
+GREEN=(83,224,45)
+BLACK=(0,0,0)
+YELLOW=(249,236,24)
 
 pygame.mixer.music.load("缘结神.mp3")
 pygame.mixer.music.set_volume(0.5)
@@ -64,7 +66,7 @@ class food:
         self.y=random.randint(0,515)
         self.rect=pygame.Rect(self.x,self.y,25,25)
     def happen(self):
-        pygame.draw.rect(screen,yellow,self.rect)
+        pygame.draw.rect(screen,YELLOW,self.rect)
 
 yellow_food=food()
 yellow_food.new()
@@ -91,14 +93,13 @@ while True:
         green_snake.add()
         yellow_food.new()
 
-    screen.fill(black)
+    screen.fill(BLACK)
 
     yellow_food.happen()
 
     for i in green_snake.body:
-        pygame.draw.rect(screen,green,i)
+        pygame.draw.rect(screen,GREEN,i)
 
     pygame.display.flip()
 
-    time=pygame.time.Clock()
     time.tick(15)
