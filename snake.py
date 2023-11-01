@@ -18,7 +18,7 @@ pygame.mixer.music.play(-1)
 
 rect=pygame.Rect(0,0,25,25)
 
-class snake:
+class Snake:
     def __init__(self):
         self.body=[]
         self.body.append(rect)
@@ -59,9 +59,9 @@ class snake:
             elif i.y>540:
                 i.y-=540
 
-green_snake=snake()
+green_snake=Snake()
 
-class food:
+class Food:
     def new(self):
         self.x=random.randint(0,935)
         self.y=random.randint(0,515)
@@ -69,7 +69,7 @@ class food:
     def happen(self):
         pygame.draw.rect(screen,YELLOW,self.rect)
 
-yellow_food=food()
+yellow_food=Food()
 yellow_food.new()
 
 def get(snake,food):
